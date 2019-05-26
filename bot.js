@@ -12,9 +12,9 @@ client.on("message", message => {
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
   message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
-  m.send(`${argresult}\n ${m}`);
+  m.send(`${argresult}\n *{m}`);
   })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
+  message.channel.send(`\`*{message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
   message.delete();
   };
   });
@@ -32,7 +32,7 @@ client.on("message", message => {
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
     message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
-   m.send(`${argresult}\n *{m}`);
+   m.send(`*{argresult}\n *{m}`);
   })
    message.channel.send(`\`*{message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  عدد المستلمين `); 
    message.delete(); 
@@ -41,8 +41,8 @@ client.on("message", message => {
 
 client.on('message', message => {
     var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("$avatar")) {
-message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
+if (message.content.startsWith("*avatar")) {
+message.channel.send(`This avatar For *{user} link : *{user.avatarURL}`);
 }
 });
 
