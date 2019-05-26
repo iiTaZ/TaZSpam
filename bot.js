@@ -78,11 +78,11 @@ m.sendMessage(args)
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       ebc | لأرسال برود كاست للكل
+       1bc | لأرسال برود كاست للكل
 
-       obc  |  لأرسال برود كاست للأونلاين
+       2bc  |  لأرسال برود كاست للأونلاين
 
-       abc | برودكاست عادي
+       3bc | برودكاست عادي
 
        ** `)
    message.author.sendEmbed(embed)
